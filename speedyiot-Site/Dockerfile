@@ -1,0 +1,8 @@
+# Use Node:8 Image from Docker hubs
+#
+
+FROM node:8
+
+# install the angular CLI
+RUN npm install -g @angular/cli
+
