@@ -12,7 +12,7 @@ phases:
     - ng --version
 
     # Move to src directory
-    - cd ./webapp
+    - cd ./speedyiot-Site
 
     # Install project node modules
     - echo "Installing Project Node Modules"
@@ -26,7 +26,7 @@ phases:
 
 # Files to be extracted to the artifact deployment destination as defined in the code build project configuration
 artifacts:
-  base-directory: ./webapp/dist/speedyiot-Site/
+  base-directory: ./speedyiot-Site/dist/speedyiot-Site/
   # Select all files recursively in the selected base directory
   files:
   - '**/*'
