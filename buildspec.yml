@@ -1,0 +1,32 @@
+# Build spec for speedyIOT.tech website
+#
+# Expected to be used in conjunction with AWS code build to build angular app and deploy to S3
+
+version: 0.2
+
+phases:
+  build:
+    commands:
+
+    - echo "Angular Version:"
+    - ng --version
+
+    # Move to src directory
+    - cd ./webapp
+
+    # Install project node modules
+    - echo "Installing Project Node Modules"
+    - npm install
+
+
+    # Build the angular app
+    - echo "Starting Angular build"
+    - ng build --prod --build-optimizer
+
+
+# Files to be extracted to the artifact deployment destination as defined in the code build project configuration
+artifacts:
+  base-directory: ./webapp/dist/speedyiot-Site/
+  # Select all files recursively in the selected base directory
+  files:
+  - '**/*'
